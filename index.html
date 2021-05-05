@@ -1,0 +1,200 @@
+<html>
+
+<head>
+    <title>PomodorApp</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/flatly/bulmaswatch.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"> -->
+    <script src="assets/timer.js" defer></script>
+    <script src="src/index.js" defer></script>
+</head>
+
+<body>
+    <div id='background-image'></div>
+    <div id='background-overlay'></div>
+    <div id='background-pattern'></div>
+
+    <section class='hidden' class="hero is-primary">
+        <div class="hero-body">
+          <p class="title">
+            Primary hero
+          </p>
+          <p class="subtitle">
+            Primary subtitle
+          </p>
+        </div>
+      </section>
+
+
+    <div id="welcome-div">
+
+        <div class="card" style="width: 320px;">
+            <div class="card-image">
+                <figure class="image">
+                    <img src="assets/geometric_logo.jpg" alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="card-content">
+                <div class="media">
+                    <p class=Login></p>
+                </div>
+
+                <div class="content">
+                    <h2>Welcome to PomodorApp</h2>
+                    <br>
+                    <div class='field'>
+                        <form id="login-form">
+                            <input class='input' type="text" placeholder="Enter Username" id="name" />
+                            <input type="submit" class='button is-primary' value="Login" />
+                        </form>
+                    </div>
+                    <h3>New here? Sign Up!</h3>
+                    <button class='button is-primary' id="register-button">Register</button>
+                    <form id="register-form" class='hidden'>
+                        <input class ='input' type="text" placeholder="Enter New Username" id="name" />
+                        <input type="submit" class='button is-primary' value="Signup" />
+                    </form>
+                    <br>
+                    <p id="error-p" ></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="compartment" class='vertical'>
+
+        <div id='container'>
+
+            <div class='columns'>
+
+                <div class='column is-narrow'>
+                    <!-- column 1 -->
+
+                    <div class='container'>
+                        <div class='tile is-ancestor'>
+                            <div class='tile is-vertical is-parent'>
+                                <div class='tile is-child box'>
+                                    <div id="user-info">
+                                        <h3 class='button is-primary is-outlined'>PomodorApp</h3>
+                                        <h4 id="username"></h4>
+                                        <p id="time">Total Time/Sessions</p>
+                                    </div>
+                                </div>
+                                <div class='tile is-child box'>
+                                    <div id="spotify-div"></div>
+                                </div>
+                                <div class='tile is-child box'>
+                                    <div id='completed-sessions'>
+                                        <div id='alignment-div'>
+                                            <h4 class='title is-4'>Completed Sessions </h4>
+                                            <ul id='session-list' class="scroll">Sessions</ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class='column is-9'>
+                    <!-- column 2 -->
+
+                    <div class='container'>
+                        <div class='tile is-ancestor'>
+                            <div class='tile is-vertical is-parent'>
+
+                                <div class='tile is-child box'>
+                                    <div id="session-div" data-id=null class='title is-4'>
+                                        <h4 class='title is-4'> Timer</h4>
+                                        <p id='timer'></p>
+
+                                        <br>
+                                        <div class='timer'> 00:00:00 </div>
+                                        <br>
+                                        <div id = start-encapsulate>
+                                            <button class='button' id="start-session">Start Session</button>
+                                        </div>
+                                        
+                                        <div class= 'hidden' id = button-encapsulate>
+                                            <button class='button' id="stop-session" >Stop Session</button>
+                                        </div>
+
+                                        <div class='hidden' id = 'break-timer'>
+                                            00:00:00
+                                        </div>
+                                        <br>
+                                        <button class='button' id="timer-settings">Edit Timers</button>
+                                        <form id="timer-form" class='hidden'>
+                                            Enter times in minutes:
+                                            <br>
+                                            <label for="workTimer">Work Timer: </label>
+                                            <input type="number" id="workTimer" />
+                                            <br>
+                                            <label for="breakTimer">Break Timer:</label>
+                                            <input type="number" id="breakTimer">
+                                            <input type="submit" class ='button is-primary' value="Update Timers" />
+                                        </form>
+                                        <p id="sessionMsgs"></p>
+                                    </div>
+                                </div>
+
+                                <div class='tile is-child box'>
+                                    <div id="advice">
+                                    </div>
+                                </div>
+
+
+                                <div class='columns' id='2'>
+
+                                    <div class='column'>
+                                        <div class='container'>
+                                            <div class='tile box' class ='center'>
+                                                <div id='checklist' class='scroll' class='center'>
+                                                    <h4 id='checklist' class='title is-4'>++Checklist</h4>
+                                                    <div id='hide-task-form'>
+                                                        <form class='hidden' id="task-form">
+                                                            <input class= 'input' type="text" placeholder="Enter New Task" id="name" />
+                                                            <input class= 'button is-primary is-rounded' type="submit" value="Create Task" />
+                                                        </form>
+                                                        <ul id='task-list' class='scroll'>Checklist
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class='column'>
+                                        <div class='container'>
+                                            <div class ='tile box'>
+                                                <div id='completed-tasks' class='scroll' class ='center'>
+                                                    <h4 class='title is-4'>Completed Tasks</h4>
+                                                    <div id="completedUlDiv" class='scroll'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
