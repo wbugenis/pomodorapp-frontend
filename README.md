@@ -5,6 +5,8 @@ The Pomodoro method is a study technique where you study for 25 minutes, then ta
 
 It is built with a Vanilla JS/HTML frontend, a Rails backend, and is styled with Bulma.
 
+Check out the backend repo [here](https://github.com/wbugenis/pomodorapp-backend)
+
 # Features
 
 - Users can add, remove or complete tasks on a checklist
